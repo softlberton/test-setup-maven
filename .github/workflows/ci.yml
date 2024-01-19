@@ -24,5 +24,5 @@ jobs:
 
       - name: Debug Maven
         run: |
-          mvn --version
-
+          echo "# Output" >> $GITHUB_STEP_SUMMARY
+          echo "$(mvn --version)" >> $GITHUB_STEP_SUMMARY
