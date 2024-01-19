@@ -1,0 +1,28 @@
+name: Debug Action
+run-name: Setup Maven
+on:
+  workflow_dispatch:
+    inputs:
+      run:
+        description: Run workflow
+        required: false
+        type: boolean
+
+jobs:
+  debug-action:
+    name: Debug action - setup maven
+    runs-on: ubuntu-latest
+    if: inputs.run
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4.5
+        with:
+          maven-version: 3.8.2
+
+      - name: Debug Maven
+        run: |
+          mvn --version
+
