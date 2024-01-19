@@ -18,7 +18,7 @@ jobs:
 
       - name: Set up Maven
         if: inputs.run
-        uses: stCarolas/setup-maven@v4.5
+        uses: softlberton/setup-maven@master
         with:
           maven-version: 3.8.2
 
