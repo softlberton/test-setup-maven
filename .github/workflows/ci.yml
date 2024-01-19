@@ -12,12 +12,12 @@ jobs:
   debug-action:
     name: Debug action - setup maven
     runs-on: ubuntu-latest
-    if: inputs.run
 
     steps:
       - uses: actions/checkout@v3
 
       - name: Set up Maven
+        if: inputs.run
         uses: stCarolas/setup-maven@v4.5
         with:
           maven-version: 3.8.2
